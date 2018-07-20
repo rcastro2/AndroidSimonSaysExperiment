@@ -2,6 +2,7 @@ package com.example.code.castrosays2;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -84,5 +85,11 @@ public class GameActivity extends AppCompatActivity {
     public static void gameOver(){
         Intent i = new Intent(mContext,GameOverActivity.class);
         mContext.startActivity(i);
+    }
+    public static int getScreenWidth(){
+        return Resources.getSystem().getDisplayMetrics().widthPixels;
+    }
+    public static int getScreenHeight(){
+        return Resources.getSystem().getDisplayMetrics().heightPixels;
     }
 }

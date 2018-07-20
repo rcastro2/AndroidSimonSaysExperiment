@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 
 /**
@@ -27,6 +28,11 @@ public class MyButton {
         this.value = value;
         mp = MediaPlayer.create(GameActivity.mContext, soundID);
         this.b.setBackgroundColor(off);
+        ViewGroup.LayoutParams p = this.b.getLayoutParams();
+        p.width = GameActivity.getScreenWidth() / 2;
+        p.height = GameActivity.getScreenHeight() / 2;
+        this.b.setLayoutParams(p);
+
         this.b.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
