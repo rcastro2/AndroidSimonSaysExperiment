@@ -21,7 +21,7 @@ public class GameActivity extends AppCompatActivity {
     public static ArrayList<Integer> sequence;
     public static boolean playingSequence;
     public static int playerPosition;
-    private static Context mContext;
+    public static Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +31,10 @@ public class GameActivity extends AppCompatActivity {
 
         playingSequence = true;
 
-        btnRed = new MyButton(findViewById(R.id.btnRed), Color.rgb(255,0,0),Color.rgb(175,0,0),0,"red.mp3");
-        btnGreen = new MyButton(findViewById(R.id.btnGreen), Color.rgb(0,255,0),Color.rgb(0,175,0),1,"green.mp3");
-        btnBlue = new MyButton(findViewById(R.id.btnBlue), Color.rgb(0,0,255),Color.rgb(0,0,175),2,"blue.mp3");
-        btnYellow = new MyButton(findViewById(R.id.btnYellow), Color.rgb(255,255,0),Color.rgb(175,175,0),3,"yellow.mp3");
+        btnRed = new MyButton(findViewById(R.id.btnRed), Color.rgb(255,0,0),Color.rgb(175,0,0),0,R.raw.red);
+        btnGreen = new MyButton(findViewById(R.id.btnGreen), Color.rgb(0,255,0),Color.rgb(0,175,0),1,R.raw.green);
+        btnBlue = new MyButton(findViewById(R.id.btnBlue), Color.rgb(0,0,255),Color.rgb(0,0,175),2,R.raw.blue);
+        btnYellow = new MyButton(findViewById(R.id.btnYellow), Color.rgb(255,255,0),Color.rgb(175,175,0),3,R.raw.yellow);
         buttons = new MyButton[4];
         sequence = new ArrayList<>();
         buttons[0] = btnRed;

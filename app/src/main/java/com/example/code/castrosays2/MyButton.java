@@ -1,6 +1,7 @@
 package com.example.code.castrosays2;
 
 import android.annotation.SuppressLint;
+import android.media.MediaPlayer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -16,15 +17,15 @@ public class MyButton {
     private int on;
     private int off;
     private int value;
-    private String sound;
+    private MediaPlayer mp;
 
     @SuppressLint("ClickableViewAccessibility")
-    public MyButton(View v, int on, int off, int value, String sound) {
+    public MyButton(View v, int on, int off, int value, int soundID) {
         this.b = (Button)v;
         this.on = on;
         this.off = off;
         this.value = value;
-        this.sound = sound;
+        mp = MediaPlayer.create(GameActivity.mContext, soundID);
         this.b.setBackgroundColor(off);
         this.b.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -33,6 +34,7 @@ public class MyButton {
                 //Log.d("Castro", " " + GameActivity.playerPosition + " " + GameActivity.sequence.get(GameActivity.playerPosition) + " " + MyButton.this.value );
                 if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
                     MyButton.this.b.setBackgroundColor(MyButton.this.on);
+                    mp.start();
                     if(GameActivity.sequence.get(GameActivity.playerPosition) != MyButton.this.value){
                         GameActivity.gameOver();
                     }
@@ -56,6 +58,7 @@ public class MyButton {
     }
     public void on(){
         this.b.setBackgroundColor(this.on);
+        mp.start();
     }
     public void off(){
         this.b.setBackgroundColor(this.off);
