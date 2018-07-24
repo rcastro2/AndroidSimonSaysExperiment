@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnHowTo;
     private Button btnHighScore;
+    private Button btnOptions;
     private Button btnPlay;
 
     @Override
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         btnHowTo = (Button)findViewById(R.id.btnHowPlay);
         btnHighScore = (Button)findViewById(R.id.btnHighScore);
+        btnOptions = (Button)findViewById(R.id.btnOption);
         btnPlay = (Button)findViewById(R.id.btnPlay);
 
         btnHowTo.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this,HighScoreActivity.class);
+                startActivity(i);
+            }
+        });
+        btnOptions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,OptionsActivity.class);
                 startActivity(i);
             }
         });

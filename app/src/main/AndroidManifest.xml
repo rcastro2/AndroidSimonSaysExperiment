@@ -19,7 +19,8 @@
         <activity android:name=".HowToActivity" />
         <activity android:name=".HighScoreActivity" />
         <activity android:name=".GameActivity" />
-        <activity android:name=".GameOverActivity"></activity>
+        <activity android:name=".GameOverActivity" />
+        <activity android:name=".OptionsActivity"></activity>
     </application>
 
 </manifest>
