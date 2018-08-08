@@ -68,7 +68,7 @@ public class GameActivity extends AppCompatActivity {
             }
         }, 1000);
     }
-    public static int pos, ct, pace = 1000;
+    public static int pos, ct, pace = 500;
     public static void assignDigits(){
         digits = new int[10];
         digits[0] = R.drawable.d0;
@@ -108,7 +108,7 @@ public class GameActivity extends AppCompatActivity {
                 buttons[sequence.get(pos)].off();
                 playingSequence = false;
                 playerPosition = 0;
-                if(pace > 200) pace -= 150;
+                if(pace > 200) pace -= 100;
             }
         }.start();
     }
